@@ -1,10 +1,4 @@
-/**
- * @license Copyright (c) 2003-2021, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
- */
-
 import ClassicEditorBase from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
-
 import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat';
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
 import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold';
@@ -36,6 +30,8 @@ import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformatio
 import SimpleUploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter';
 import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
 
+import ImageRemoveEventCallbackPlugin from './plugins/image-remove-event-callback';
+
 export default class ClassicEditor extends ClassicEditorBase { }
 
 ClassicEditor.builtinPlugins = [
@@ -54,6 +50,7 @@ ClassicEditor.builtinPlugins = [
 	ImageStyle,
 	ImageToolbar,
 	ImageUpload,
+	ImageRemoveEventCallbackPlugin,
 	Indent,
 	Italic,
 	Link,
@@ -72,6 +69,7 @@ ClassicEditor.builtinPlugins = [
 ];
 
 ClassicEditor.defaultConfig = {
+	language: 'ru', // This value must be kept in sync with the language defined in webpack.config.js.
 	toolbar: {
 		items: [
 			'heading',
@@ -120,7 +118,5 @@ ClassicEditor.defaultConfig = {
 			'tableProperties',
 			'tableCellProperties'
 		]
-	},
-	// This value must be kept in sync with the language defined in webpack.config.js.
-	language: 'ru'
+	}
 };
