@@ -30,8 +30,6 @@ import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformatio
 import SimpleUploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter';
 import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
 
-import ImageRemoveEventCallbackPlugin from './plugins/image-remove-event-callback';
-
 export default class ClassicEditor extends ClassicEditorBase { }
 
 ClassicEditor.builtinPlugins = [
@@ -50,7 +48,6 @@ ClassicEditor.builtinPlugins = [
 	ImageStyle,
 	ImageToolbar,
 	ImageUpload,
-	ImageRemoveEventCallbackPlugin,
 	Indent,
 	Italic,
 	Link,
