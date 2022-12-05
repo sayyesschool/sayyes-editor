@@ -1,10 +1,3 @@
-/**
- * @license Copyright (c) 2003-2021, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
- */
-
-'use strict';
-
 /* eslint-env node */
 
 const path = require('path');
@@ -12,6 +5,7 @@ const webpack = require('webpack');
 const { bundler, styles } = require('@ckeditor/ckeditor5-dev-utils');
 const CKEditorWebpackPlugin = require('@ckeditor/ckeditor5-dev-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const CSSExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
 	devtool: 'source-map',
@@ -22,7 +16,6 @@ module.exports = {
 	output: {
 		// The name under which the editor will be exported.
 		library: 'ClassicEditor',
-
 		path: path.resolve(__dirname, 'build'),
 		filename: 'ckeditor.js',
 		libraryTarget: 'umd',
@@ -51,6 +44,9 @@ module.exports = {
 			language: 'ru',
 			additionalLanguages: ['en', 'ru']
 		}),
+		new CSSExtractPlugin({
+			filename: 'ckeditor.css'
+		}),
 		new webpack.BannerPlugin({
 			banner: bundler.getLicenseBanner(),
 			raw: true
@@ -66,23 +62,29 @@ module.exports = {
 			{
 				test: /\.css$/,
 				use: [
+					CSSExtractPlugin.loader,
+					// {
+					// 	loader: 'style-loader',
+					// 	options: {
+					// 		injectType: 'singletonStyleTag',
+					// 		attributes: {
+					// 			'data-cke': true
+					// 		}
+					// 	}
+					// },
 					{
-						loader: 'style-loader',
-						options: {
-							injectType: 'singletonStyleTag',
-							attributes: {
-								'data-cke': true
-							}
-						}
+						loader: 'css-loader'
 					},
 					{
 						loader: 'postcss-loader',
-						options: styles.getPostCssConfig({
-							themeImporter: {
-								themePath: require.resolve('@ckeditor/ckeditor5-theme-lark')
-							},
-							minify: true
-						})
+						options: {
+							postcssOptions: styles.getPostCssConfig({
+								themeImporter: {
+									themePath: require.resolve('@ckeditor/ckeditor5-theme-lark')
+								},
+								minify: true
+							})
+						}
 					}
 				]
 			}
