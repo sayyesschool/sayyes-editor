@@ -8,6 +8,7 @@ import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials';
 import FontColor from '@ckeditor/ckeditor5-font/src/fontcolor';
 import FontBackgroundColor from '@ckeditor/ckeditor5-font/src/fontbackgroundcolor';
 import Heading from '@ckeditor/ckeditor5-heading/src/heading';
+import HTMLSupport from '@ckeditor/ckeditor5-html-support/src/generalhtmlsupport';
 import Image from '@ckeditor/ckeditor5-image/src/image';
 import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption';
 import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize';
@@ -18,10 +19,13 @@ import Indent from '@ckeditor/ckeditor5-indent/src/indent';
 import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic';
 import Link from '@ckeditor/ckeditor5-link/src/link';
 import List from '@ckeditor/ckeditor5-list/src/list';
+import ListProperties from '@ckeditor/ckeditor5-list/src/listproperties';
 import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed';
 import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice';
+import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat';
 import Strikethrough from '@ckeditor/ckeditor5-basic-styles/src/strikethrough';
+import Style from '@ckeditor/ckeditor5-style/src/style';
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import TableProperties from '@ckeditor/ckeditor5-table/src/tableproperties';
@@ -42,6 +46,7 @@ ClassicEditor.builtinPlugins = [
 	FontColor,
 	FontBackgroundColor,
 	Heading,
+	HTMLSupport,
 	Image,
 	ImageCaption,
 	ImageResize,
@@ -52,11 +57,14 @@ ClassicEditor.builtinPlugins = [
 	Italic,
 	Link,
 	List,
+	ListProperties,
 	MediaEmbed,
 	Paragraph,
 	PasteFromOffice,
+	RemoveFormat,
 	SimpleUploadAdapter,
 	Strikethrough,
+	Style,
 	Table,
 	TableToolbar,
 	TableProperties,
@@ -70,6 +78,7 @@ ClassicEditor.defaultConfig = {
 	toolbar: {
 		items: [
 			'heading',
+			//'style',
 			'|',
 			'bold',
 			'italic',
@@ -94,8 +103,12 @@ ClassicEditor.defaultConfig = {
 			'mediaEmbed',
 			'|',
 			'undo',
-			'redo'
+			'redo',
+			'removeFormat'
 		]
+	},
+	list: {
+		styles: true
 	},
 	image: {
 		toolbar: [
@@ -107,6 +120,20 @@ ClassicEditor.defaultConfig = {
 			'imageTextAlternative'
 		]
 	},
+	// style: {
+	// 	definitions: [
+	// 		{
+	// 			name: 'Описание упражнения',
+	// 			element: 'p',
+	// 			classes: ['description']
+	// 		},
+	// 		{
+	// 			name: 'Диалог',
+	// 			element: 'p',
+	// 			classes: ['dialog']
+	// 		}
+	// 	]
+	// },
 	table: {
 		contentToolbar: [
 			'tableColumn',
