@@ -27,9 +27,10 @@ import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat';
 import Strikethrough from '@ckeditor/ckeditor5-basic-styles/src/strikethrough';
 import Style from '@ckeditor/ckeditor5-style/src/style';
 import Table from '@ckeditor/ckeditor5-table/src/table';
+import TableCellProperties from '@ckeditor/ckeditor5-table/src/tablecellproperties';
+import TableColumnResize from '@ckeditor/ckeditor5-table/src/tablecolumnresize';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import TableProperties from '@ckeditor/ckeditor5-table/src/tableproperties';
-import TableCellProperties from '@ckeditor/ckeditor5-table/src/tablecellproperties';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
 import SimpleUploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter';
 import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
@@ -66,9 +67,10 @@ ClassicEditor.builtinPlugins = [
 	Strikethrough,
 	Style,
 	Table,
-	TableToolbar,
-	TableProperties,
 	TableCellProperties,
+	TableColumnResize,
+	TableProperties,
+	TableToolbar,
 	TextTransformation,
 	Underline
 ];
@@ -78,7 +80,7 @@ ClassicEditor.defaultConfig = {
 	toolbar: {
 		items: [
 			'heading',
-			//'style',
+			'style',
 			'|',
 			'bold',
 			'italic',
@@ -120,20 +122,25 @@ ClassicEditor.defaultConfig = {
 			'imageTextAlternative'
 		]
 	},
-	// style: {
-	// 	definitions: [
-	// 		{
-	// 			name: 'Описание упражнения',
-	// 			element: 'p',
-	// 			classes: ['description']
-	// 		},
-	// 		{
-	// 			name: 'Диалог',
-	// 			element: 'p',
-	// 			classes: ['dialog']
-	// 		}
-	// 	]
-	// },
+	style: {
+		definitions: [
+			{
+				name: 'Основной цвет',
+				element: 'span',
+				classes: ['ck-primary-color']
+			},
+			{
+				name: 'Второстепенный цвет',
+				element: 'span',
+				classes: ['ck-secondary-color']
+			},
+			{
+				name: 'Приглушенный цвет',
+				element: 'span',
+				classes: ['ck-muted-color']
+			}
+		]
+	},
 	table: {
 		contentToolbar: [
 			'tableColumn',
