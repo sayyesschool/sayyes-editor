@@ -122,25 +122,6 @@ ClassicEditor.defaultConfig = {
 			'imageTextAlternative'
 		]
 	},
-	style: {
-		definitions: [
-			{
-				name: 'Основной цвет',
-				element: 'span',
-				classes: ['ck-primary-color']
-			},
-			{
-				name: 'Второстепенный цвет',
-				element: 'span',
-				classes: ['ck-secondary-color']
-			},
-			{
-				name: 'Приглушенный цвет',
-				element: 'span',
-				classes: ['ck-muted-color']
-			}
-		]
-	},
 	table: {
 		contentToolbar: [
 			'tableColumn',
