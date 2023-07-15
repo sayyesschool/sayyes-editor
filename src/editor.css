@@ -1,0 +1,15 @@
+.ck-editor .text-left {
+    text-align: left;
+}
+
+.ck-editor .text-center {
+    text-align: center;
+}
+
+.ck-editor .text-right {
+    text-align: right;
+}
+
+.ck-editor .text-justify {
+    text-align: justify;
+}
