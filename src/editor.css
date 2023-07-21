@@ -13,3 +13,7 @@
 .ck-editor .text-justify {
     text-align: justify;
 }
+
+.ck-balloon-panel {
+    display: none !important;
+}
