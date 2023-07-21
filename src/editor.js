@@ -5,19 +5,21 @@ import { Bold, Italic, Strikethrough, Underline } from '@ckeditor/ckeditor5-basi
 import { BlockQuote } from '@ckeditor/ckeditor5-block-quote';
 import { CloudServices } from '@ckeditor/ckeditor5-cloud-services';
 import { Essentials } from '@ckeditor/ckeditor5-essentials';
-import { FontColor, FontBackgroundColor, FontSize } from '@ckeditor/ckeditor5-font';
+// import { FontColor, FontBackgroundColor, FontSize } from '@ckeditor/ckeditor5-font';
 import { Heading } from '@ckeditor/ckeditor5-heading';
 import { HorizontalLine } from '@ckeditor/ckeditor5-horizontal-line';
 import { GeneralHtmlSupport as HTMLSupport } from '@ckeditor/ckeditor5-html-support';
 import { Image, ImageCaption, ImageResize, ImageStyle, ImageToolbar, ImageUpload } from '@ckeditor/ckeditor5-image';
 import { Indent } from '@ckeditor/ckeditor5-indent';
 import { Link } from '@ckeditor/ckeditor5-link';
-import { List, ListProperties } from '@ckeditor/ckeditor5-list';
+import { DocumentList, DocumentListProperties } from '@ckeditor/ckeditor5-list';
 import { MediaEmbed } from '@ckeditor/ckeditor5-media-embed';
 import { Paragraph } from '@ckeditor/ckeditor5-paragraph';
 import { PasteFromOffice } from '@ckeditor/ckeditor5-paste-from-office';
 import { RemoveFormat } from '@ckeditor/ckeditor5-remove-format';
 import { Style } from '@ckeditor/ckeditor5-style';
+import TableStyleSupport from '@ckeditor/ckeditor5-style/src/integrations/table';
+import DocumentListStyleSupport from '@ckeditor/ckeditor5-style/src/integrations/documentlist';
 import { Table, TableCellProperties, TableColumnResize, TableProperties, TableToolbar } from '@ckeditor/ckeditor5-table';
 import { TextTransformation } from '@ckeditor/ckeditor5-typing';
 import { SimpleUploadAdapter } from '@ckeditor/ckeditor5-upload';
@@ -32,6 +34,9 @@ export default class extends ClassicEditor {
 		Bold,
 		BlockQuote,
 		CloudServices,
+		DocumentList,
+		DocumentListProperties,
+		DocumentListStyleSupport,
 		// FontColor,
 		// FontBackgroundColor,
 		// FontSize,
@@ -47,8 +52,8 @@ export default class extends ClassicEditor {
 		Indent,
 		Italic,
 		Link,
-		List,
-		ListProperties,
+		// List,
+		// ListProperties,
 		MediaEmbed,
 		Paragraph,
 		PasteFromOffice,
@@ -61,6 +66,7 @@ export default class extends ClassicEditor {
 		TableColumnResize,
 		TableProperties,
 		TableToolbar,
+		TableStyleSupport,
 		TextTransformation,
 		Underline
 	];
