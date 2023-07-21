@@ -31,13 +31,36 @@
 
 		<script src="../build/ckeditor.js"></script>
 		<script>
-			ClassicEditor.create(document.querySelector('#editor'))
-				.then(editor => {
-					window.editor = editor;
-				})
-				.catch(error => {
-					console.error('There was a problem initializing the editor.', error);
-				});
+			ClassicEditor.create(document.querySelector('#editor'), {
+				style: {
+					definitions: [
+						{
+							name: 'Article category',
+							element: 'h3',
+							classes: ['category']
+						},
+						{
+							name: 'Info box',
+							element: 'p',
+							classes: ['info-box']
+						},
+						{
+							name: 'Custom Table',
+							element: 'table',
+							classes: ['custom-table']
+						},
+						{
+							name: 'Custom List',
+							element: 'ul',
+							classes: ['custom-list']
+						}
+					]
+				}
+			}).then(editor => {
+				window.editor = editor;
+			}).catch(error => {
+				console.error('There was a problem initializing the editor.', error);
+			});
 		</script>
 	</body>
 </html>
