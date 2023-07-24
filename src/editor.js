@@ -100,8 +100,8 @@ export default class extends ClassicEditor {
 		},
 		table: {
 			contentToolbar: [
-				'tableColumn',
 				'tableRow',
+				'tableColumn',
 				'mergeTableCells',
 				'tableProperties',
 				'tableCellProperties'
