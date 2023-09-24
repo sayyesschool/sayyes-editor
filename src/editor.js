@@ -5,7 +5,7 @@ import { Bold, Italic, Strikethrough, Underline } from '@ckeditor/ckeditor5-basi
 import { BlockQuote } from '@ckeditor/ckeditor5-block-quote';
 import { CloudServices } from '@ckeditor/ckeditor5-cloud-services';
 import { Essentials } from '@ckeditor/ckeditor5-essentials';
-// import { FontColor, FontBackgroundColor, FontSize } from '@ckeditor/ckeditor5-font';
+import { FontSize } from '@ckeditor/ckeditor5-font';
 import { Heading } from '@ckeditor/ckeditor5-heading';
 import { HorizontalLine } from '@ckeditor/ckeditor5-horizontal-line';
 import { GeneralHtmlSupport as HTMLSupport } from '@ckeditor/ckeditor5-html-support';
@@ -37,9 +37,7 @@ export default class extends ClassicEditor {
 		DocumentList,
 		DocumentListProperties,
 		DocumentListStyleSupport,
-		// FontColor,
-		// FontBackgroundColor,
-		// FontSize,
+		FontSize,
 		Heading,
 		HorizontalLine,
 		HTMLSupport,
@@ -81,6 +79,12 @@ export default class extends ClassicEditor {
 				{ name: 'justify', className: 'text-justify' }
 			]
 		},
+		fontSize: {
+			options: [
+				'small',
+				'default'
+			]
+		},
 		list: {
 			properties: {
 				styles: true,
@@ -116,6 +120,7 @@ export default class extends ClassicEditor {
 				'italic',
 				'underline',
 				'strikethrough',
+				'fontSize',
 				'alignment',
 				'removeFormat',
 				'|',
