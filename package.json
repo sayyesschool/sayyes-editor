@@ -13,6 +13,9 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "Oleg Polyakov <olegpolyakov@outlook.com>",
   "license": "GPL-2.0-or-later",
   "homepage": "https://ckeditor.com/ckeditor-5",
