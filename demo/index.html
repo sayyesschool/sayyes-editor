@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>CKEditor 5 – classic editor build – development sample</title>
-		<link rel="stylesheet" href="../build/ckeditor.css">
+		<link rel="stylesheet" href="../dist/editor.css">
 		<style>
 			body {
 				max-width: 800px;
@@ -29,9 +29,9 @@
 					build</a> works fine.</p>
 		</div>
 
-		<script src="../build/ckeditor.js"></script>
+		<script src="../dist/editor.js"></script>
 		<script>
-			ClassicEditor.create(document.querySelector('#editor'), {
+			Editor.create(document.querySelector('#editor'), {
 				style: {
 					definitions: [
 						{
