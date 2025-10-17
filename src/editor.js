@@ -12,14 +12,14 @@ import { GeneralHtmlSupport as HTMLSupport } from '@ckeditor/ckeditor5-html-supp
 import { Image, ImageCaption, ImageResize, ImageStyle, ImageToolbar, ImageUpload } from '@ckeditor/ckeditor5-image';
 import { Indent } from '@ckeditor/ckeditor5-indent';
 import { Link } from '@ckeditor/ckeditor5-link';
-import { DocumentList, DocumentListProperties } from '@ckeditor/ckeditor5-list';
+import { List, ListProperties } from '@ckeditor/ckeditor5-list';
 import { MediaEmbed } from '@ckeditor/ckeditor5-media-embed';
 import { Paragraph } from '@ckeditor/ckeditor5-paragraph';
 import { PasteFromOffice } from '@ckeditor/ckeditor5-paste-from-office';
 import { RemoveFormat } from '@ckeditor/ckeditor5-remove-format';
 import { Style } from '@ckeditor/ckeditor5-style';
-import TableStyleSupport from '@ckeditor/ckeditor5-style/src/integrations/table';
-import DocumentListStyleSupport from '@ckeditor/ckeditor5-style/src/integrations/documentlist';
+import ListStyle from '@ckeditor/ckeditor5-style/src/integrations/list';
+import TableStyle from '@ckeditor/ckeditor5-style/src/integrations/table';
 import { Table, TableCellProperties, TableColumnResize, TableProperties, TableToolbar } from '@ckeditor/ckeditor5-table';
 import { TextTransformation } from '@ckeditor/ckeditor5-typing';
 import { SimpleUploadAdapter } from '@ckeditor/ckeditor5-upload';
@@ -34,9 +34,6 @@ export default class extends ClassicEditor {
 		Bold,
 		BlockQuote,
 		CloudServices,
-		DocumentList,
-		DocumentListProperties,
-		DocumentListStyleSupport,
 		FontSize,
 		Heading,
 		HorizontalLine,
@@ -50,8 +47,9 @@ export default class extends ClassicEditor {
 		Indent,
 		Italic,
 		Link,
-		// List,
-		// ListProperties,
+		List,
+		ListProperties,
+		ListStyle,
 		MediaEmbed,
 		Paragraph,
 		PasteFromOffice,
@@ -64,7 +62,7 @@ export default class extends ClassicEditor {
 		TableColumnResize,
 		TableProperties,
 		TableToolbar,
-		TableStyleSupport,
+		TableStyle,
 		TextTransformation,
 		Underline
 	];

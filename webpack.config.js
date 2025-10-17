@@ -15,9 +15,9 @@ module.exports = {
 
 	output: {
 		// The name under which the editor will be exported.
-		library: 'ClassicEditor',
-		path: path.resolve(__dirname, 'build'),
-		filename: 'ckeditor.js',
+		library: 'Editor',
+		path: path.resolve(__dirname, 'dist'),
+		filename: 'editor.js',
 		libraryTarget: 'umd',
 		libraryExport: 'default'
 	},
@@ -45,7 +45,7 @@ module.exports = {
 			additionalLanguages: ['en', 'ru']
 		}),
 		new CSSExtractPlugin({
-			filename: 'ckeditor.css'
+			filename: 'editor.css'
 		}),
 		new webpack.BannerPlugin({
 			banner: bundler.getLicenseBanner(),
