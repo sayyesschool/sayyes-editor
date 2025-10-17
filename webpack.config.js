@@ -63,15 +63,6 @@ module.exports = {
 				test: /\.css$/,
 				use: [
 					CSSExtractPlugin.loader,
-					// {
-					// 	loader: 'style-loader',
-					// 	options: {
-					// 		injectType: 'singletonStyleTag',
-					// 		attributes: {
-					// 			'data-cke': true
-					// 		}
-					// 	}
-					// },
 					{
 						loader: 'css-loader'
 					},
