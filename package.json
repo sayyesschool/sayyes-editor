@@ -2,7 +2,13 @@
   "name": "@sayyes/editor",
   "version": "1.0.0",
   "description": "SayYes Editor based on CKEditor 5",
-  "keywords": [],
+  "keywords": [
+    "ckeditor5",
+    "editor",
+    "rich text editor",
+    "wysiwyg",
+    "sayyes"
+  ],
   "main": "./dist/editor.js",
   "files": [
     "dist"
